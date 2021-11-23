@@ -23,6 +23,26 @@
         document.write("가져온 태그의 수 = " + $liList.length);
         document.write("<br>");
 
+        let $first_li = $liList.eq(0);
+        $first_li.css("font-size", "25px");
+
+        // for(let i=0; e<$liList.length; i++) {
+        //     let liTag = $liList[i];
+        //     let $li = $(liTag);
+        //     let fontSize = 25 + (5 + i);
+
+        //     $li.css("font-size", fontSize+"px");
+        // }
+
+        // 제이쿼리 메서드 중 each 메서드를 사용하면 배열에 차례대로 접근 가능
+        // $liList.each(function(index, liTag) {
+        //     let $li = $(liTag);
+        //     let fontSize = 25 + (5 + index);
+
+        //     $li.css("font-size", fontSize+"px");
+        // });
+
+
         // 제이쿼리 문서 객체들을 저장하고 있는 배열에 인덱스 번호로 접근하면
         // 해당 제이쿼리 문서 객체가 DOM 형태로 변환되서 접근함
         let liTag = $liList[0];

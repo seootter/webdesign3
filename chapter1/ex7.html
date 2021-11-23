@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>insert page title</title>
+    <style>
+        * {
+            margin: 0;
+        }
+        body {
+            position: relative;
+            background: black;
+        }
+        div {
+            width: 100%;
+            height: 200px;
+            background: white;
+            text-align: center;
+            font-size: 40px;
+            position: absolute;
+        }
+        .first {
+            top: 0;
+        }
+        .second {
+            top: 500px;
+        }
+        .third {
+            top: 1000px;
+        }
+        .forth {
+            top: 1500px;
+        }
+    </style>
+</head>
+<body>
+    <div class="first">
+        <p>1</p>
+        <button type="button" onclick="showScrollTop()">현재 스크롤의 위치</button>
+        <button type="button" onclick="moveScrollTop(0)">스크롤을 마지막으로 이동</button>
+    </div>
+    <div class="second">
+        <p>2</p>
+        <button type="button" onclick="showScrollTop()">현재 스크롤의 위치</button>
+    </div>
+    <div class="thrid">
+        <p>3</p>
+        <button type="button" onclick="showScrollTop()">현재 스크롤의 위치</button>
+    </div>
+    <div class="forth">
+        <p>4</p>
+        <button type="button" onclick="moveScrollTop(0)">스크롤을 마지막으로 이동</button>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+        function showScrollTop() {
+            let scrollTop = $(window).scrollTop();
+            
+            alert("현재 스크롤은 " + scrollTop + "px 위치에 있습니다.");
+        }
+
+        function moveScrollTop(num) {
+            let scrollTop = num == 0 ? 2000 : 0;
+
+            $(window).scrollTop(scrollTop);
+        }
+    </script>
+</body>
+</html>
