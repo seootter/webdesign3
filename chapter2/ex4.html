@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>insert page title</title>
+</head>
+<body>
+    <a href="http://www.naver.com" id="naver">네이버로 이동</a>
+    <a href="http://www.google.co.kr" id="google">구글로 이동</a>
+    <a href="http://www.daum.net" id="daum">다음으로 이동</a>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+        function alertHref(element) {
+            let $a = $(element);
+            let href = $a.attr("href");
+
+            alert(href);
+        }
+
+        $("a").on("click", function() {
+            alertHref(this);
+
+            return false;
+        });
+
+    </script>
+</body>
+</html>

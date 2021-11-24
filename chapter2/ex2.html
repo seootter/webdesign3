@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>insert page title</title>
+</head>
+<body>
+    <button type="button" id="btn">클릭</button>
+    <h1 id="h1Tag">클릭</h1>
+
+    <div>
+        <p>이미지를 클릭하세요</p>
+        <img src="../chapter1/imges/game_1.png" id="imgTag">
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+        $("#btn").on("click", function() {
+            alert("버튼 클릭");
+        });
+
+        $("#h1Tag").on("click", function() {
+            alert("h1 태그 클릭");
+        });
+
+        $("#imgTag").on("click", function() {
+            alert("img 태그 클릭");
+        })
+    </script>
+</body>
+</html>

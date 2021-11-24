@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>insert page title</title>
+</head>
+<body>
+    <form action="#">
+        <fieldset>
+            <legend>이메일</legend>
+            <input type="email" placeholder="이메일">
+            @
+            <input type="text" id="domain" disabled>
+            <select>
+                <option id="naver" value="naver.com">네이버</option>
+                <option id="goolge" value="google.co.kr">구글</option>
+                <option id="daum" value="daum.net">다음</option>
+                <option id="text" value="">직접 입력</option>
+            </select>
+        </fieldset>
+    </form>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+        // select에 change 이벤트가 발생했을 때 this로 접근하면
+        // 현재 선택한 option 태그의 dom 에 접근
+
+        $("select").on("change", function() {
+            let $option = $(this);
+            let value = $option.val();
+
+            $("#domain").val(value);
+
+            if(value == "") {
+                $("#domain").removeAttr("disabled");
+            }
+        });
+
+        // option 태그는 click 이벤트를 처리할 수 없음
+        // select ~ option 태그는 change 이벤트가 발생함
+        // select 태그에서 선택한 옵션에 따라서 어떤 행동을 하려면 change 이벤트를 처리해야함
+        
+        // $("option").on("click", function() {
+        //     let $option = $(this);
+        //     let value = $($option).val();
+
+        //     $("#domain").val(value);
+        // });
+    </script>
+</body>
+</html>

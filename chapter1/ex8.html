@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>insert page title</title>
+    <style>
+        .red {background: red;}
+        .orange {background: orange;}
+        .yellow {background: yellow;}
+        .green {background: green;}
+        .blue {background: blue;}
+        .navy {background: navy;}
+        .purple {background: purple;}
+
+        .element {
+            margin-top: 10px;
+            width: 30px;
+            height: 30px;
+        }
+
+        .append {
+            margin-top: 10px;
+            height: 300px;
+            background: blueviolet;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="buttons">
+            <button type="button" onclick="callBefore()">before</button>
+            <button type="button" onclick="callAppend()">append</button>
+            <button type="button" onclick="callEmpty()">empty</button>
+            <button type="button" onclick="callRemove()">remove</button>
+
+        </div>
+
+        <div class="append"></div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+        let index = 0;
+        let colorList = ["red", "orange", "yellow", "green", "blue", "navy", "purple"];
+
+        function callBefore() {
+            let color = colorList[index];
+
+            index = (index + 1) % colorList.length;
+
+            let $append = $(".append");
+            $append.before("<div class=\"element " + color + "\"></div>");
+        }
+
+        function callAppend() {
+            let color = colorList[index];
+
+            index = (index + 1) % colorList.length;
+
+            let $append = $(".append");
+            $append.append("<div class=\"element " + color + "\"></div>");
+        }
+
+        function callEmpty() {
+            let $append = $(".append");
+            $append.empty();
+        }
+
+        function callRemove() {
+            let $append = $(".append");
+            $append.remove();
+        }
+    </script>
+</body>
+</html>

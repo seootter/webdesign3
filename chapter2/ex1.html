@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>insert page title</title>
+</head>
+<body>
+    <button type="button">버튼</button>
+    <p>이벤트란 웹 페이지 내 사용자의 모든 행동을 뜻함</p>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+        for(let i=0; i<100000000; i++) {
+
+        }
+
+        // load 이벤트 : 페이지 로딩이 끝났을 때 발생하는 이벤트
+        // 페이지 로딩 : 페이지에 접근해서 페이지 내 보여줄 컨텐츠들이
+        // 모두 보이도록 하는 중
+        $(window).on("load", function() {
+            alert("페이지 로딩이 완료되었음!");
+        });
+    </script>
+    
+    <script>
+        let $button = $("button");
+
+        $button.on("click", function() {
+            alert("클릭했음!");
+        });
+
+        $("button").on("click", function() {
+            alert("클릭했음!");
+        });
+
+        // 이벤트를 처리하도록 등록하지 않은 태그도 강제로 이벤트를 발생시킬 수 있음
+        // 이벤트 처리 함수를 등록하지 않은 태그는 다아연히 반응이 없음
+        // $("button").trigger("click");
+        $("button").off("click");
+    </script>
+</body>
+</html>

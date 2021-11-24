@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>insert page title</title>
+</head>
+<body>
+    <a href="http://www.naver.com">네이버로 이동</a>
+
+    <form action="#">
+        <input type="text" name="id" id="id" placeholder="아이디">
+        <input type="password" name="pw" id="pw" placeholder="비밀번호">
+        <input type="submit" value="로그인" id="loginBtn">
+    </form>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+        // a태그는 a 태그의 기능이 내장되어있음
+        // 동일한 이름의 이벤트 처리 함수를 여러 개 등록하면 그 여러 개의 함수가 모두 동작
+        $("a").on("click", function() {
+            alert("a 태그 클릭");
+
+            return false;
+        });
+
+        $("#loginBtn").on("click", function(e) {
+            e.preventDefault();
+
+            alert("submit 버튼 클릭");
+        })
+
+        //submit 버튼의 기본 기능을 동작하지 않게 만들 땐 a 태그랑 다르게 처리함
+        // - 기본 동작을 하지 않게 하려면
+        // ① function의 매개변수를 하나 선언함    
+        // ② 매개변수.preventDefault() 사용 : 맨 첫줄에 매개변수의 preventDefault 메서드를 호출함
+    </script>
+</body>
+</html>
