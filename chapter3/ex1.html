@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>insert page title</title>
+    <style>
+        .bg {
+            width: 300px;
+            height: 300px;
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <button type="button" class="hide">hide()</button>
+        <button type="button" class="show">show()</button>
+
+        <button type="button" class="slideUp">slideUp()</button>
+        <button type="button" class="slideDown">slideDown()</button>
+
+        <button type="button" class="slideToggle">slideToggle()</button>
+    </div>
+
+    <div class="bg" isShow="true"></div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+        $(".hide").on("click", function() {
+            $(".bg").hide();
+        });
+
+        $(".show").on("click", function() {
+            $(".bg").show();
+        });
+
+        // slide 메서드의 적용시간과 진행가속도
+        // 첫 번째 인자 - 적용 시간 (적용 시간은 밀리초 단위로 지정)
+        // 두 번째 인자 - 진행 가속도 (easing, 효과가 적용된 시간에 속도를 지정)
+        // 진행 가속도를 적용할 때는 경우에 따라서 jquery 뿐만 아니라 jqueryUI 등
+        //다른 js 라이브러리를 추가해야 할 수도 있음
+        $(".slideUp").on("click", function() {
+            $(".bg").slideUp(3000, "swing", function() {
+                alert("slideUp 끝");
+            });
+        });
+
+        $(".slideDown").on("click", function() {
+            $(".bg").slideDown();
+        });
+
+        // let isShow = true;
+
+        $(".slideToggle").on("click", function() {
+            $(".bg").slideToggle(2000, "swing", function() {
+                let isShow = $(".bg").attr("isShow");
+                isShow = isShow === "true";
+
+                if(isShow) {
+                        alert("사라짐");
+                    } else {
+                        alert("나타남");
+                    }
+
+                $(".bg"),attr("isShow", !isShow);
+                });
+
+
+
+            //     isShow = !isShow;
+
+            //     if(isShow) {
+            //         alert("나타남");
+            //     } else {
+            //         alert("사라짐");
+            //     }
+            // });
+
+            //     let diplay = $(".bg").css("display");
+
+            //     if(diplay == "none") {
+            //         alert("사라짐");
+            //     }
+                
+            //     if(diplay == "block"){
+            //         alert("나타남");
+            //     }
+            
+        });
+    </script>
+</body>
+</html>

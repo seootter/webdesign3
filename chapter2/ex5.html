@@ -31,10 +31,13 @@
             let $option = $(this);
             let value = $option.val();
 
-            $("#domain").val(value);
-
             if(value == "") {
+                $("#domain").val("");
                 $("#domain").removeAttr("disabled");
+                $("#domain").focus();
+            } else {
+                $("#domain").val(value);
+                $("#domain").prop("disabled", true);
             }
         });
 

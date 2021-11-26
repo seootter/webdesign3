@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>insert page title</title>
+    <style>
+        .red {background: red;}
+        .orange {background: orange;}
+        .yellow {background: yellow;}
+        .green {background: green;}
+        .blue {background: blue;}
+        .navy {background: navy;}
+        .purple {background: purple;}
+
+        div {
+            margin-top: 10px;
+            width: 500px;
+            height: 500px;
+        }
+    </style>
+</head>
+<body>
+    <div class="red"></div>
+    <div class="orange"></div>
+    <div class="yellow"></div>
+    <div class="green"></div>
+    <div class="blue"></div>
+    <div class="navy"></div>
+    <div class="purple"></div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+        $(window).on("scroll", function() {
+            let $window = $(this);
+
+            console.log("스크롤의 위치 = " + $window.scrollTop());
+
+            // 새로운 컨텐츠를 불러올 스크롤의 기준이 되는 위치
+            let reloadPoint = $("body").height() / 2;
+
+            // 사용자가 페이지의 스크롤을 절반정도 내렸다면 새로운 컨텐츠 추가
+            if($window.scrollTop() >= reloadPoint) {
+             addNewItem();   
+            }
+        });
+
+        function addNewItem() {
+            $("body").append(
+            "<div class=\"red\"></div>" + 
+            "<div class=\"orange\"></div>" + 
+            "<div class=\"yellow\"></div>" + 
+            "<div class=\"green\"></div>" + 
+            "<div class=\"blue\"></div>" + 
+            "<div class=\"navy\"></div>" + 
+            "<div class=\"purple\"></div>"
+            );
+        }
+    </script>
+
+</body>
+</html>

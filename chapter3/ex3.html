@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>insert page title</title>
+    <link rel="stylesheet" href="jquery-ui.min.css">
+</head>
+<body>
+    <div>
+        <img src="../chapter1/imges/game_1.png">
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <!-- jquery-ui 라는 jquery plugin을 사용 -->
+    <!-- jquery-ui 는 juqery-ui.css 까지 같이 페이지에 연결해줘야함 -->
+    <script src="jquery-ui.min.js"></script>
+    <script>
+        $("div").draggable();
+        $("img").resizeable();
+    </script>
+</body>
+</html>

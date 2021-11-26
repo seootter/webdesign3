@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>insert page title</title>
+</head>
+<body>
+    <div>
+        <form action="#">
+            <input type="text" id="id" placeholder="아이디">
+            <input type="password" id="pw" placeholder="비밀번호">
+            <input type="checkbox" id="saveId">아이디 기억하기
+            <input type="submit" value="로그인">
+        </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js" integrity="sha512-3j3VU6WC5rPQB4Ld1jnLV7Kd5xr+cq9avvhwqzbH/taCRNURoeEpoPBK9pDyeukwSxwRPJ8fDgvYXd6SkaZ2TA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        $("#saveId").on("click", function() {
+            // 1. 사용자가 입력한 아이디를 가져옴
+            let id = $("#id").val();
+            // 2. 가져온 사용자가 입력한 아이디를 쿠키에 저장함
+            $.cookie("id", id, {expire: 7, path="/"});
+        });
+
+
+        // $.cookie("이름", "값"); : 이름이 "이름"인 쿠키에 "값"을 저장
+        $.cookie("info", "hello");
+        $.cookie("info", "hello", {expire: 3, path:"/"});
+        // 이름이 info인 쿠키에 hello를 저장하는데 유지기간이 3일임을 의미
+        // 3일 뒤에는 이름이 info인 쿠키가 삭제됨
+
+        // 이름이 login인 쿠키에 true 값을 저장
+        // 사용자가 login을 했다 라는 의미로 사용할 수 있음
+        // 사용자가 로그인한 상태다 라고 쿠키에 기록
+        $.cookie("login", "true");   
+
+        // 사용자가 장바구니에 바지 상품을 담은 상태임을 쿠키에 기록
+        $.cookie("cart", "pants");     
+
+        // 캐시와 쿠키는 유지기간이 있음
+        // 음식의 유통기한처럼 캐시와 쿠키에 유지기간을 설정해두면
+        // 유지기간이 지나면 캐시와 쿠키가 사라짐
+
+        
+    </script>
+</body>
+</html>

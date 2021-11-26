@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>insert page title</title>
+</head>
+<body>
+    <div>
+        <form action="#">
+            <input type="text" id="id" placeholder="아이디">
+            <input type="password" id="pw" placeholder="비밀번호">
+            <input type="checkbox" id="saveId">아이디 기억하기
+            <input type="submit" value="로그인">
+        </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js" integrity="sha512-3j3VU6WC5rPQB4Ld1jnLV7Kd5xr+cq9avvhwqzbH/taCRNURoeEpoPBK9pDyeukwSxwRPJ8fDgvYXd6SkaZ2TA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        // $.cookie("이름"); : 이름이 "이름"인 쿠키에 저장된 값에 접근
+
+
+        // 아이디 기억하기를 눌렀을 때 id쿠키에 저장된 아이디
+        let value = $.cookie("id");
+
+        // 기억된 아이디가 있다면 아이디 입력란에 기억된 아이디를 자동으로 입력
+        if(value != undefined) {
+            $("#id").val(value);
+        }
+
+        $("#saveId").on("click", function() {
+            let id = $("#id").val();
+            $.cookie("id", id, {expire: 7, path:"/"});
+        });
+    </script>
+</body>
+</html>
