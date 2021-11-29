@@ -25,7 +25,6 @@
         // 아이디 기억하기를 눌렀을 때 id쿠키에 저장된 아이디
         let value = $.cookie("id");
 
-        // 기억된 아이디가 있다면 아이디 입력란에 기억된 아이디를 자동으로 입력
         if(value != undefined) {
             $("#id").val(value);
             $("#saveId").prop("checked", true);
