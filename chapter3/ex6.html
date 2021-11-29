@@ -28,11 +28,20 @@
         // 기억된 아이디가 있다면 아이디 입력란에 기억된 아이디를 자동으로 입력
         if(value != undefined) {
             $("#id").val(value);
+            $("#saveId").prop("checked", true);
         }
 
         $("#saveId").on("click", function() {
             let id = $("#id").val();
+
+        id = id.trim();
+
+        if(id.length == 0) {
+            alert("아이디를 입력하세요");
+        } else {
             $.cookie("id", id, {expire: 7, path:"/"});
+        }
+        
         });
     </script>
 </body>
