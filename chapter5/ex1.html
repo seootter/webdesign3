@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>insert page title</title>
+</head>
+<body>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+        // ajax : 비동기식 요청 기술
+        // 요청을 할 때 필요한 것들
+        // 1. 어디? 어느 서버로 요청할 것인지
+        // 2. 어떻게? 어떤 방식(Method)로 요청할 것인지
+        // 3. 무엇을? 서버로 요청하는 것이 어떤 데이터인지
+        //  단순한 text, html, css, img, 동영상, ...)
+        // 4. 응답 처리 → 서버가 요청을 받아서 요청에 맞는 결과를 줬을 때
+        //               어떻게 처리할 것인지
+        // 5. 부가적으로 데이터가 필요하다면 부가적으로 보낼 데이터
+        $.ajax({
+            url: "http://localhost:8080/webdesign/나머지 경로...",
+            type : "GET",
+            data : "부가적으로 보낼 데이터",
+            dataType : "text",
+            success : function(data) {
+                // function에 있는 data에 서버가
+                // 보내준 결과(내가 요청한 데이터)가 들어있음
+                alert("서버가" + data + " 를 응답했음");
+            }
+        });
+    </script>
+</body>
+</html>
