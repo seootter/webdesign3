@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>insert page title</title>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>번호</th>
+                <th>제목</th>
+                <th>담당부서</th>
+                <th>등록일</th>
+                <th>조회수</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+
+        let val = 1;
+
+        let info = {
+            "name": "김철수",
+            "age": 27,
+            "addr": "부산광역시",
+            "height": 165.7,
+            "school": ["A초등학교", "B중학교", "C고등학교"]
+        }
+
+        let latter = [{
+            "number": 997,
+            "title": "2021년 제 2회 추가경정예산 고시",
+            "department": "기획감사실",
+            "createDate": "2021-11-30",
+            "viewCount": 1
+        }, {
+            "number": 996,
+            "title": "2022년 상반기 재활용 선별장 기간제 근로자 채용 공고",
+            "department": "청소행정과",
+            "createDate": "2021-12-01",
+            "viewCount": 3
+        }, {
+            "number": 995,
+            "title": "2022년 상반기 서구취업정보센터 구인구직개척단 채용 공고",
+            "department": "복지정책과",
+            "createDate": "2021-12-01",
+            "viewCount": 60
+        }];
+
+        for(let i=0; i<latter.length; i++) {
+            let nthLatter = latter[i];
+
+            $("table tbody").append(
+            "<tr>" + 
+                "<td>" + nthLatter["number"] + "</td>" + 
+                "<td>" + nthLatter["title"] +"</td>" + 
+                "<td>" + nthLatter["department"] + "</td>" + 
+                "<td>" + nthLatter["createDate"] + "</td>" + 
+                "<td>"+ nthLatter["viewCount"] + "</td>" + 
+            "</tr>"
+            );
+        }
+
+
+    </script>
+</body>
+</html>
